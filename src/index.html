@@ -12,16 +12,42 @@
 </head>
 
 <body>
-  <div id="signInScreen">
+  <!-- Pantalla de inicio de sesión -->
+  <!--  <div id="signInScreen">
     <h1>INGRESAR</h1>
     <input type="email" id="emailSignIn" class="input" placeholder="Email">
     <input type="password" id="passwordSignIn" class="input" placeholder="Contraseña">
-    <input type="button" id="logIn" class="buttonLogIn" value="INICIAR SESIÓN">
-    <input type="button" id="signIn" class="buttonLogIn" value="CREAR CUENTA">
+    <input type="button" id="logInSignIn" class="btnLogIn" value="INICIAR SESIÓN">
+    <input type="button" id="signIn" class="btnLogIn" value="CREAR CUENTA">
     <h2>o iniciar sesión con</h2>
     <input type="image" id="gmailIcon" class="gmailIcon" src="images/gmail.png">
     <input type="image" id="facebookIcon" class="facebookIcon" src="images/facebook.png">
-
+  </div>  -->
+  <!-- Pantalla de registro -->
+  <div id="logInScreen">
+    <h1>CREA TU CUENTA</h1>
+    <input type="text" id="name" class="input" placeholder="Nombre">
+    <input type="email" id="emailLogIn" class="input" placeholder="Email">
+    <input type="password" id="passwordLogIn" class="input" placeholder="Contraseña">
+    <select name="alcaldias" class="input" id="alcaldias">
+      <option value="value1">Álvaro Obregón</option>
+      <option value="value2">Azcapotzalco</option>
+      <option value="value3">Benito Juárez</option>
+      <option value="value4">Coyoacán</option>
+      <option value="value5">Cuajimalpa</option>
+      <option value="value6">Cuauhtémoc</option>
+      <option value="value7">Gustavo A. Madero</option>
+      <option value="value8">Iztacalco</option>
+      <option value="value9">Iztapalapa</option>
+      <option value="value10">Magdalena Contreras</option>
+      <option value="value11">Miguel Hidalgo</option>
+      <option value="value12">Milpa Alta</option>
+      <option value="value13">Tláhuac</option>
+      <option value="value14">Tlalpan</option>
+      <option value="value15">Venustiano Carranza</option>
+      
+    </select>
+    <input type="button" id="logIn" class="btnLogIn" value="REGISTRARME">
   </div>
   <script type="module" src="main.js"></script>
 </body>
