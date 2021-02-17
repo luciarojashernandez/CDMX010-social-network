@@ -5,11 +5,18 @@ body{
     font-family: 'Ubuntu', sans-serif;
 } 
 /*Pantalla de inicio de sesión*/
+.logo{
+    position: absolute;
+    width: 153px;
+    height: 129px;
+    left: 103px;
+    top: 30px;
+}
 #signInScreen h1{
     position: absolute;
     width: 176px;
     left: 92px;
-    top: 150px;
+    top: 170px;
     font-weight: bold;
     font-size: 30px;
     line-height: 34px;
@@ -87,7 +94,7 @@ h2{
 #logInScreen h1{
     position: absolute;
     left: 55px;
-    top: 150px;
+    top: 170px;
     font-weight: bold;
     font-size: 30px;
     line-height: 34px;
