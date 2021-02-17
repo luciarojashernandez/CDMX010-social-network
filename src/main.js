@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 
 const authGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  
+
   authentication(provider);
   //muestra la pantalla 3
 };
