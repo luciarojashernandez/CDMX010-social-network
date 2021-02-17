@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { authentication } from "./lib/index.js";
+import { authentication, signOut} from "./lib/index.js";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -22,4 +22,5 @@ const authGoogle = () => {
 };
 document.querySelector("#gmailIcon").addEventListener("click", authGoogle);
 
+document.querySelector("#signOut").addEventListener("click", signOut);
 
