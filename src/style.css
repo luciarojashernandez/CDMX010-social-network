@@ -12,7 +12,7 @@ body{
     left: 103px;
     top: 30px;
 }
-#signInScreen h1{
+#viewSignInScreen h1{
     position: absolute;
     width: 176px;
     left: 92px;
@@ -91,7 +91,7 @@ h2{
 }
 
 /*Pantalla de registro*/
-#logInScreen h1{
+#viewLogInScreen h1{
     position: absolute;
     left: 55px;
     top: 170px;
