@@ -1,26 +1,30 @@
 // Este es el punto de entrada de tu aplicacion
+import { authGoogle } from './lib/firebase.js';
+import { routers } from './routers.js';
 
-import { authentication, signOut} from "./lib/index.js";
+console.log(`data${routers}`);
 
-// Your web app's Firebase configuration
-var firebaseConfig = {
-  apiKey: "AIzaSyBtGImqGGVhvaAc6_Jet3sB_dFhrCtf0Q0",
-  authDomain: "social-network-sn8.firebaseapp.com",
-  projectId: "social-network-sn8",
-  storageBucket: "social-network-sn8.appspot.com",
-  messagingSenderId: "747280353813",
-  appId: "1:747280353813:web:4b8f99e5a4450c8fc5dc1c",
+window.addEventListener('DOMContentLoaded', () => {
+  const rootDiv = document.querySelector('#root');
+  rootDiv.innerHTML = routers[window.location.pathname];
+  console.log(`html${rootDiv}`);
+});
+
+window.addEventListener('click', () => {
+  const onNavigate = (pathname) => {
+    window.history.pushState(
+      {},
+      pathname,
+      window.location.origin + pathname,
+    );
+    rootDiv.innerHTML = routes[pathname];
+  };
+});
+
+window.onpopstate = () => {
+  rootDiv.innerHTML = routes[window.location.pathname];
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
-const authGoogle = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
+// document.querySelector("#gmailIcon").addEventListener("click", authGoogle);
 
-  authentication(provider);
-  //muestra la pantalla 3
-};
-document.querySelector("#gmailIcon").addEventListener("click", authGoogle);
-
-document.querySelector("#signOut").addEventListener("click", signOut);
-
+// document.querySelector("#signOut").addEventListener("click", signOut);
