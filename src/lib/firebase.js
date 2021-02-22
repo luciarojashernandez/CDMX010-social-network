@@ -17,3 +17,4 @@ export const authGoogle = () => {
   authentication(provider);
   // muestra la pantalla 3
 };
+

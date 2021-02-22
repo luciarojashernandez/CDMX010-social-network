@@ -2,7 +2,7 @@
 import { authGoogle } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
 
-let rootDiv = null;
+let rootDiv;
 
 window.addEventListener('DOMContentLoaded', () => {
   rootDiv = document.querySelector('#root');
@@ -13,6 +13,22 @@ window.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelector('#gmailIcon').addEventListener('click', authGoogle);
 });
-window.onpopstate = () => {
-  rootDiv.innerHTML = routers[window.location.pathname];
-};
+// window.onpopstate = () => {
+//   rootDiv.innerHTML = routers[window.location.pathname];
+// };
+
+
+
+
+// async function crearCuenta() {
+//   const carga = await onNavigate('/logInScreen');
+
+//   console.log(carga);
+// }
+
+// document.querySelector('#logIn').addEventListener('click', crearCuenta);
+
+// window.onload = function () {
+//   const botonprueba = document.querySelector('#logIn');
+//   console.log(botonprueba);
+// };
