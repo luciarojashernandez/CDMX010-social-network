@@ -1,9 +1,9 @@
 import { home } from './components/home.js';
-import { logInScreen } from './components/logInScreen.js';
+import { createAccount } from './components/createAccount.js';
 
 export const routers = {
   '/': home,
-  '/logInScreen': logInScreen,
+  '/createAccount': createAccount,
 };
 
 export const onNavigate = (pathname) => {
