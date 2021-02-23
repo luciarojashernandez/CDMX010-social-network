@@ -37,6 +37,19 @@ export const funcCreateAccount = (email, password) => {
     });
 };
 
+export const funcLogin = (email, password) => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      console.log(errorCode);
+      const errorMessage = error.message;
+      console.log(errorMessage);
+    });
+};
+
 // export const signOut = () => {
 //   console.log('hola');
 //   firebase.auth().signOut().then(() => {

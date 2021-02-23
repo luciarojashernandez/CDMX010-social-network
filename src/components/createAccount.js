@@ -23,6 +23,6 @@ export const createAccount = `
       <option value="carranza">Venustiano Carranza</option>
       <option value="xochimilco">Xochimilco</option>
     </select>
-    <input type="button" id="btnSignin" class="btnSignin" value="REGISTRARME">
+    <input type="button" id="btnSignin" class="orangeButton" value="REGISTRARME">
   </div>
 `;
