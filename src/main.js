@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
-import { authGoogle } from './lib/firebase.js';
+import { authGoogle, authFacebook } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
-import { funcCreateAccount } from './lib/logicFirebase.js';
+import { funcCreateAccount, funcLogin } from './lib/logicFirebase.js';
 
 let rootDiv = null;
 
@@ -19,8 +19,18 @@ window.addEventListener('DOMContentLoaded', () => {
       console.log(email + password);
     });
   });
+
+  document.querySelector('#login').addEventListener('click', () => {
+    const email = document.querySelector('#emailLogin').value;
+    const password = document.querySelector('#passwordLogin').value;
+    funcLogin(email, password);
+  });
+
   document.querySelector('#gmailIcon').addEventListener('click', authGoogle);
+
+  document.querySelector('#facebookIcon').addEventListener('click', authFacebook);
 });
-window.onpopstate = () => {
+
+/* window.onpopstate = () => {
   rootDiv.innerHTML = routers[window.location.pathname];
-};
+}; */

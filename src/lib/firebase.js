@@ -18,3 +18,8 @@ export const authGoogle = () => {
   // muestra la pantalla 3
 };
 
+export const authFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  authentication(provider);
+  // muestra la pantalla 3
+};
