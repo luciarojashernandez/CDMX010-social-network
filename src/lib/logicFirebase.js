@@ -4,6 +4,7 @@ export const authentication = (provider) => {
     .auth()
     .signInWithPopup(provider)
     .then((result) => {
+      // console.log(result);
       /** @type {firebase.auth.OAuthCredential} */
       const credential = result.credential;
       // This gives you a Google Access Token. You can use it to access the Google API.

@@ -31,10 +31,6 @@ body{
     box-sizing: border-box;
 }
 .orangeButton{    
-    width: 225px;
-    height: 50px;
-    left: 67px;
-    top: 360px;
     background: #F96D15;
     border: #F96D15;
     color:#FFFFFF;
@@ -127,5 +123,153 @@ h2{
 #btnSignin{
     position: absolute;
     top: 469px;
+    width: 225px;
+    height: 50px;
+    left: 67px;
     background: #F96D15;
+}
+
+/* HEADER */
+.logoMenu{
+    position: flex;
+    width: 55px;
+    height: 46px;
+    left: 21px;
+    top: 20px;    
+}
+.menu{
+    width: 360px;
+    height: 72px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;    
+}
+.menuItems{
+    display: flex;
+    list-style:none;
+    margin-right: 30px;
+}
+
+.menuItems li a{
+    padding: 7px 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-transform: uppercase;
+    color: #F96D15;
+}
+.menuIcon{
+    position: absolute;
+    width: 25px;
+    height: 33px;
+    left: 312px;
+    top: 26px;
+}
+.btnMenu{
+    margin-right: 30px;
+    cursor:pointer;
+    display:none;
+}
+ul.show{
+    top:65px;
+}
+@media screen and (max-width: 952px){
+   .menuItems li a{
+       font-size: 16px;
+   }
+}
+@media screen and (max-width: 858px){
+    .menu {
+        height: 65px;
+    }
+    .btnMenu {
+        display:inline-flex;
+    }
+    .menuItems {
+        position: fixed;
+        width: 100vw;
+        height: calc(100% -65px);
+        background: black;
+        top:-100vh;
+        text-align: center;
+        transition: all .4s;
+        flex-direction: column;
+    }
+    .menuItems li{
+        margin: 30px 0 0 0;
+        line-height: 30px;
+    }
+    .menuItems li a{
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+}
+/* FEED SCREEN */
+#goPostScreen{
+    position: absolute;
+    width: 314px;
+    height: 72px;
+    left: 23px;
+    top: 72px; 
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 36px;
+}
+#profilePicture{
+    position: absolute;
+    width: 58px;
+    height: 34px;
+    left: 14px;
+    top: 175px; 
+    color: #F96D15;
+}
+.postData{
+    position: absolute;
+    width: 88px;
+    height: 28px;
+    left: 74px;
+    top: 176px;
+}
+.postData li{
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
+    color: #F96D15;
+}
+.postFeed{
+    position: absolute;
+    width: 360px;
+    height: 154px;
+    left: 0px;
+    top: 231px;
+    background: #e4dede; 
+}
+.likeIcon{
+    position: absolute;
+    width: 45px;
+    height: 40px;
+    left: 88px;
+    top: 398px;
+}
+.editIcon{
+    position: absolute;
+    width: 42px;
+    height: 38px;
+    left: 168px;
+    top: 401px;
+
+}
+.deleteIcon{
+    position: absolute;
+    width: 43px;
+    height: 39px;
+    left: 245px;
+    top: 400px;
 }
