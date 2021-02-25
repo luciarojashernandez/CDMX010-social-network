@@ -31,6 +31,6 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#facebookIcon').addEventListener('click', authFacebook);
 });
 
-/* window.onpopstate = () => {
+window.onpopstate = () => {
   rootDiv.innerHTML = routers[window.location.pathname];
-}; */
+};
