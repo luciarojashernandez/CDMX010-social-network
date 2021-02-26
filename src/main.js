@@ -1,23 +1,19 @@
 import { authGoogle, authFacebook } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
-import { funcCreateAccount, funcLogin } from './lib/logicFirebase.js';
+import { funcLogin } from './lib/logicFirebase.js';
+import { register } from './components/createAccount.js';
 
 let rootDiv = null;
 
-const crearCuenta = () => {
+const createAccountHome = () => {
   document.querySelector('#createAccount').addEventListener('click', () => {
     const navigate = onNavigate('/createAccount');
     rootDiv.innerHTML = navigate;
-    /** ++++++++++++++++++++++++++++++++++ */
-    document.querySelector('#btnSignin').addEventListener('click', () => {
-      const email = document.querySelector('#emailCreateAccount').value;
-      const password = document.querySelector('#passwordCreateAccount').value;
-      funcCreateAccount(email, password);
-    });
+    register();
   });
 };
 
-const registrarme = () => {
+const loginHome = () => {
   document.querySelector('#login').addEventListener('click', () => {
     const email = document.querySelector('#emailLogin').value;
     const password = document.querySelector('#passwordLogin').value;
@@ -25,53 +21,23 @@ const registrarme = () => {
   });
 };
 
-const gmail = () => {
+const loginGmail = () => {
   document.querySelector('#gmailIcon').addEventListener('click', authGoogle);
 };
 
-const facebook = () => {
+const loginFacebook = () => {
   document.querySelector('#facebookIcon').addEventListener('click', authFacebook);
 };
 
 window.addEventListener('DOMContentLoaded', () => {
   rootDiv = document.querySelector('#root');
   rootDiv.innerHTML = routers[window.location.pathname];
-  crearCuenta();
-  registrarme();
-  gmail();
-  facebook();
+  createAccountHome();
+  loginHome();
+  loginGmail();
+  loginFacebook();
 });
 
 window.onpopstate = () => {
   rootDiv.innerHTML = routers[window.location.pathname];
 };
-
-// window.addEventListener('DOMContentLoaded', () => {
-//   rootDiv = document.querySelector('#root');
-//   rootDiv.innerHTML = routers[window.location.pathname];
-//   document.querySelector('#createAccount').addEventListener('click', () => {
-//     const navigate = onNavigate('/createAccount');
-//     rootDiv.innerHTML = navigate;
-//     /** ++++++++++++++++++++++++++++++++++ */
-//     document.querySelector('#btnSignin').addEventListener('click', () => {
-//       const email = document.querySelector('#emailCreateAccount').value;
-//       const password = document.querySelector('#passwordCreateAccount').value;
-//       funcCreateAccount(email, password);
-//       console.log(email + password);
-//     });
-//   });
-
-//   document.querySelector('#login').addEventListener('click', () => {
-//     const email = document.querySelector('#emailLogin').value;
-//     const password = document.querySelector('#passwordLogin').value;
-//     funcLogin(email, password);
-//   });
-
-//   document.querySelector('#gmailIcon').addEventListener('click', authGoogle);
-
-//   document.querySelector('#facebookIcon').addEventListener('click', authFacebook);
-// });
-
-// window.onpopstate = () => {
-//   rootDiv.innerHTML = routers[window.location.pathname];
-// };
