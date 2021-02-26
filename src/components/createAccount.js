@@ -1,5 +1,3 @@
-import { funcCreateAccount } from '../lib/logicFirebase.js';
-
 export const createAccount = `
 <div id="createAccountScreen">
     <img src="images/logo app2.png" class="logo">
@@ -29,7 +27,7 @@ export const createAccount = `
   </div>
 `;
 
-export const register = () => {
+export const register = (funcCreateAccount) => {
   document.querySelector('#btnSignin').addEventListener('click', () => {
     const email = document.querySelector('#emailCreateAccount').value;
     const password = document.querySelector('#passwordCreateAccount').value;
