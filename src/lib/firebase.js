@@ -11,15 +11,40 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const dataBase = firebase.firestore();
 
 export const authGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   authentication(provider);
-  // muestra la pantalla 3
 };
 
 export const authFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   authentication(provider);
-  // muestra la pantalla 3
+};
+
+export const createUser = async (name, email, password, alcaldias) => {
+  await dataBase.collection('users').doc().set({
+    name,
+    email,
+    password,
+    alcaldias,
+  });
+};
+
+export const createPost = async (post, alcaldias) => {
+  await dataBase.collection('postDB').doc().set({
+    post,
+    alcaldias,
+  });
+};
+
+export const getPost = () => dataBase.collection('postDB').get();
+
+export const printPost = async () => {
+  const postDB = await getPost();
+  postDB.forEach((doc) => {
+    console.log(doc.data());
+  });
+  return postDB;
 };

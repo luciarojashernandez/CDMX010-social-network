@@ -27,10 +27,13 @@ export const createAccount = `
   </div>
 `;
 
-export const register = (funcCreateAccount) => {
+export const register = (funcCreateAccount, createUser) => {
   document.querySelector('#btnSignin').addEventListener('click', () => {
+    const name = document.querySelector('#name').value;
     const email = document.querySelector('#emailCreateAccount').value;
     const password = document.querySelector('#passwordCreateAccount').value;
+    const alcaldias = document.querySelector('#alcaldias').value;
     funcCreateAccount(email, password);
+    createUser(name, email, password, alcaldias);
   });
 };
