@@ -24,6 +24,7 @@ export const authentication = (provider) => {
 };
 
 export const funcCreateAccount = (email, password) => {
+  console.log("hola");
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
       // Signed in
@@ -50,6 +51,7 @@ export const funcLogin = (email, password) => {
       console.log(errorMessage);
     });
 };
+
 
 // export const signOut = () => {
 //   console.log('hola');
