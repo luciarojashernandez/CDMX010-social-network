@@ -40,11 +40,3 @@ export const createPost = async (post, alcaldias) => {
 };
 
 export const getPost = () => dataBase.collection('postDB').get();
-
-export const printPost = async () => {
-  const postDB = await getPost();
-  postDB.forEach((doc) => {
-    console.log(doc.data());
-  });
-  return postDB;
-};
