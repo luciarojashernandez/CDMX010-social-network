@@ -1,11 +1,11 @@
 import {
-  authGoogle, authFacebook, createUser, createPost, getPost,
+  authGoogle, authFacebook, createUser, createPost, getPost, deletePost,
 } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
 import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
 import { newPost } from './components/posts.js';
-import { buildPost } from './components/feed.js';
+import { buildPost, removePost } from './components/feed.js';
 
 let rootDiv = null;
 
@@ -70,6 +70,10 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'toPost':
         newPost(createPost);
         feed();
+        buildPost(getPost);
+        break;
+      case 'deleteIcon':
+        removePost(deletePost, event);
         buildPost(getPost);
         break;
       default:
