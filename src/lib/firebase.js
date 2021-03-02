@@ -39,6 +39,8 @@ export const createPost = async (post, alcaldias) => {
   });
 };
 
-export const getPost = () => dataBase.collection('postDB').get();
+// export const getPost = () => dataBase.collection('postDB').get();
 
 export const deletePost = (id) => dataBase.collection('postDB').doc(id).delete();
+
+export const onGetPost = (callback) => dataBase.collection('postDB').onSnapshot(callback);
