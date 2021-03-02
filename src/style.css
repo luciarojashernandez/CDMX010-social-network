@@ -211,7 +211,7 @@ ul.show{
 }
 /* FEED SCREEN */
 #goPostScreen{
-    position: absolute;
+    /* position: absolute; */
     width: 314px;
     height: 72px;
     left: 23px;
@@ -220,7 +220,7 @@ ul.show{
     font-weight: bold;
     font-size: 36px;
 }
-#profilePicture{
+/* #profilePicture{
     position: absolute;
     width: 58px;
     height: 34px;
@@ -234,32 +234,32 @@ ul.show{
     height: 28px;
     left: 74px;
     top: 176px;
-}
-.postData li{
+} */
+/* .postData li{
     font-family: Ubuntu;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
     line-height: 12px;
     color: #F96D15;
-}
-.postFeed{
+} */
+/* .postFeed{
     position: absolute;
     width: 360px;
     height: 154px;
     left: 0px;
     top: 231px;
     background: #e4dede; 
-}
+} */
 .likeIcon{
-    position: absolute;
+    /* position: absolute; */
     width: 45px;
     height: 40px;
     left: 88px;
     top: 398px;
 }
 .editIcon{
-    position: absolute;
+    /* position: absolute; */
     width: 42px;
     height: 38px;
     left: 168px;
@@ -267,7 +267,7 @@ ul.show{
 
 }
 .deleteIcon{
-    position: absolute;
+    /* position: absolute; */
     width: 43px;
     height: 39px;
     left: 245px;

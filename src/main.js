@@ -1,4 +1,6 @@
-import { authGoogle, authFacebook, createUser, createPost, printPost } from './lib/firebase.js';
+import {
+  authGoogle, authFacebook, createUser, createPost, getPost,
+} from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
 import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
@@ -45,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'login':
         loginHome();
         feed();
+        buildPost(getPost);
         break;
       case 'createAccount':
         createAccountHome();
@@ -67,27 +70,11 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'toPost':
         newPost(createPost);
         feed();
-        buildPost(printPost);
+        buildPost(getPost);
         break;
       default:
         break;
     }
-
-/*     if (target.id === 'login') {
-      loginHome();
-      feed();
-    } else if (target.id === 'createAccount') {
-      createAccountHome();
-    } else if (target.id === 'gmailIcon') {
-      loginGmail();
-      feed();
-    } else if (target.id === 'facebookIcon') {
-      loginFacebook();
-      feed();
-    } else if (target.id === 'btnSignin') {
-      register(funcCreateAccount, createUser);
-      feed();
-    } */
   });
 });
 
