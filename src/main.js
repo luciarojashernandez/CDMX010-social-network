@@ -1,5 +1,5 @@
 import {
-  authGoogle, authFacebook, createUser, createPost, getPost, deletePost,
+  authGoogle, authFacebook, createUser, createPost, deletePost, onGetPost,
 } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
 import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'login':
         loginHome();
         feed();
-        buildPost(getPost);
+        buildPost(onGetPost);
         break;
       case 'createAccount':
         createAccountHome();
@@ -70,11 +70,11 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'toPost':
         newPost(createPost);
         feed();
-        buildPost(getPost);
+        buildPost(onGetPost);
         break;
       case 'deleteIcon':
         removePost(deletePost, event);
-        buildPost(getPost);
+        buildPost(onGetPost);
         break;
       default:
         break;

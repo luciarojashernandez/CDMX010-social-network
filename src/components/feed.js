@@ -30,33 +30,33 @@ export const feed = `
     </div>
     `;
 
-export const buildPost = (getPost) => {
+export const buildPost = async (onGetPost) => {
   const postContainer = document.querySelector('#postContainer');
-  postContainer.innerHTML = '';
-  const postCollection = getPost();
-  postCollection.then((doc) => {
-    doc.forEach((element) => {
+  await onGetPost((postCollection) => {
+    postContainer.innerHTML = '';
+    // postCollection.then((doc) => {
+    postCollection.forEach((element) => {
       const infoPost = element.data();
       infoPost.id = element.id;
       postContainer.innerHTML += `
-<!--       <input type="image" id="profilePicture">
-      <ul class="postData">
-          <li>Nombre:</li>
-          <li>Fecha:</li>
-          <li>Ubicación</li>
-      </ul> -->
-      <p>${infoPost.post}</p>
-      <p>${infoPost.alcaldias}</p>
-      <input type="image" id="likeIcon" class="likeIcon" src="images/likeIcon.png">
-      <input type="image" id="editIcon" class="editIcon" src="images/editIcon.png">
-      <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
-      `;
+  <!--       <input type="image" id="profilePicture">
+        <ul class="postData">
+            <li>Nombre:</li>
+            <li>Fecha:</li>
+            <li>Ubicación</li>
+        </ul> -->
+        <p>${infoPost.post}</p>
+        <p>${infoPost.alcaldias}</p>
+        <input type="image" id="likeIcon" class="likeIcon" src="images/likeIcon.png">
+        <input type="image" id="editIcon" class="editIcon" src="images/editIcon.png">
+        <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
+        `;
     });
+    // });
   });
 };
 
 export const removePost = async (deletePost, event) => {
-  console.log(event.target.dataset.id);
   await deletePost(event.target.dataset.id);
   /* const deletePostPromess = deletePost();
   deletePostPromess.then((doc) => {
