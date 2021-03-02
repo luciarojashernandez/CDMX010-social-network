@@ -56,10 +56,9 @@ export const buildPost = async (onGetPost) => {
   });
 };
 
-export const removePost = async (deletePost, event) => {
-  await deletePost(event.target.dataset.id);
-  /* const deletePostPromess = deletePost();
-  deletePostPromess.then((doc) => {
-    doc(event.target.dataset.id);
-  }); */
+export const removePost = /* async */ (deletePost, postId) => {
+  // await deletePost(postId);
+  deletePost(postId).then(() => {
+    console.log(`post${postId}borrado con exito`);
+  });
 };

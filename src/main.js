@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
         buildPost(onGetPost);
         break;
       case 'deleteIcon':
-        removePost(deletePost, event);
+        removePost(deletePost, event.target.dataset.id);
         buildPost(onGetPost);
         break;
       default:
