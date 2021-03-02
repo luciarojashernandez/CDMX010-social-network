@@ -32,6 +32,7 @@ export const feed = `
 
 export const buildPost = (getPost) => {
   const postContainer = document.querySelector('#postContainer');
+  postContainer.innerHTML = '';
   const postCollection = getPost();
   postCollection.then((doc) => {
     doc.forEach((element) => {
@@ -50,18 +51,15 @@ export const buildPost = (getPost) => {
       <input type="image" id="editIcon" class="editIcon" src="images/editIcon.png">
       <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
       `;
-      const btnDelete = document.querySelectorAll('.btnDelete');
-      btnDelete.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          console.log(e.target.dataset.id);
-        });
-      });
     });
   });
-  /* postBD.forEach((doc) => {
-    console.log(doc.data());
+};
+
+export const removePost = async (deletePost, event) => {
+  console.log(event.target.dataset.id);
+  await deletePost(event.target.dataset.id);
+  /* const deletePostPromess = deletePost();
+  deletePostPromess.then((doc) => {
+    doc(event.target.dataset.id);
   }); */
-  /*   window.addEventListener('DOMContentLoaded', () => {
-      const postContainer = document.querySelector('#postContainer').value;
-    }); */
 };
