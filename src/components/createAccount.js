@@ -1,5 +1,5 @@
 export const createAccount = `
-<div id="createAccountScreen">
+<div id="createAccountScreen" class="container">
     <img src="images/logo app2.png" class="logo">
     <h1>CREA TU CUENTA</h1>
     <input type="text" id="name" class="input" placeholder="Nombre">
