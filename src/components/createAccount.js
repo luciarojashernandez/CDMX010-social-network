@@ -1,6 +1,9 @@
 export const createAccount = `
 <div id="createAccountScreen" class="container">
+ <div class="logoForm">
     <img src="images/logo app2.png" class="logo">
+  </div> 
+  <div class="homeForm">
     <h1>CREA TU CUENTA</h1>
     <input type="text" id="name" class="input" placeholder="Nombre">
     <input type="email" id="emailCreateAccount" class="input" placeholder="Email">
@@ -24,6 +27,7 @@ export const createAccount = `
       <option value="xochimilco">Xochimilco</option>
     </select>
     <input type="button" id="btnSignin" class="orangeButton" value="REGISTRARME">
+  </div> 
   </div>
 `;
 
