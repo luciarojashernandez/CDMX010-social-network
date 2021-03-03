@@ -1,4 +1,5 @@
 export const feed = `
+    <div id="contenedor">
     <div id="feedScreen">
         <header class="menu">
             <img src="images/logo app2.png" class="logoMenu">
@@ -28,6 +29,8 @@ export const feed = `
     <input type="image" id="deleteIcon" class="deleteIcon" src="images/deleteIcon.png"> -->
     </div>
     </div>
+    </div>
+
     `;
 
 export const buildPost = async (onGetPost) => {
