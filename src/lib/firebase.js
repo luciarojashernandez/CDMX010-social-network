@@ -44,3 +44,7 @@ export const createPost = async (post, alcaldias) => {
 export const deletePost = (id) => dataBase.collection('postDB').doc(id).delete();
 
 export const onGetPost = (callback) => dataBase.collection('postDB').onSnapshot(callback);
+
+export const getPost = (id) => dataBase.collection('postDB').doc(id).get();
+
+export const editPost = (id, updatedPost) => dataBase.collection('postDB').doc(id).update(updatedPost);
