@@ -1,10 +1,10 @@
 import {
-  authGoogle, authFacebook, createUser, createPost, deletePost, onGetPost,
+  authGoogle, authFacebook, createUser, createPost, deletePost, onGetPost, getPost, editPost,
 } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
 import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
-import { newPost } from './components/posts.js';
+import { newPost, btnEditPost, updatePostDb } from './components/posts.js';
 import { buildPost, removePost } from './components/feed.js';
 
 let rootDiv = null;
@@ -39,6 +39,7 @@ const loginFacebook = () => {
 };
 
 window.addEventListener('DOMContentLoaded', () => {
+  let idUpdate = null;
   rootDiv = document.querySelector('#root');
   rootDiv.innerHTML = routers[window.location.pathname];
   rootDiv.addEventListener('click', (event) => {
@@ -74,6 +75,16 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       case 'deleteIcon':
         removePost(deletePost, event.target.dataset.id);
+        buildPost(onGetPost);
+        break;
+      case 'editIcon':
+        posts();
+        btnEditPost(getPost, event.target.dataset.id);
+        idUpdate = event.target.dataset.id;
+        break;
+      case 'toEdit':
+        updatePostDb(editPost, idUpdate);
+        feed();
         buildPost(onGetPost);
         break;
       default:

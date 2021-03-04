@@ -17,6 +17,7 @@ export const feed = `
 export const buildPost = async (onGetPost) => {
   const postContainer = document.querySelector('#postContainer');
   await onGetPost((postCollection) => {
+    console.log(postCollection);
     postContainer.innerHTML = '';
     // postCollection.then((doc) => {
     postCollection.forEach((element) => {
@@ -33,7 +34,7 @@ export const buildPost = async (onGetPost) => {
         <p>${infoPost.post}</p>
         <p>${infoPost.alcaldias}</p>
         <input type="image" id="likeIcon" class="likeIcon" src="images/likeIcon.png">
-        <input type="image" id="editIcon" class="editIcon" src="images/editIcon.png">
+        <input type="image" id="editIcon" class="editIcon btnEdit" data-id="${infoPost.id}" src="images/editIcon.png">
         <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
       </div>
         `;
@@ -48,3 +49,4 @@ export const removePost = /* async */ (deletePost, postId) => {
     console.log(`post${postId}borrado con exito`);
   });
 };
+

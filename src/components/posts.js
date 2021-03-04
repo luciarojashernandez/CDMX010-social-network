@@ -28,11 +28,43 @@ export const posts = `
       <option value="xochimilco">Xochimilco</option>
     </select>
 <input type="button" id="toPost" class="toPost" value="PUBLICAR">
+<input type="button" id="toEdit" class="toPost" value="EDITAR">
 </div>
 `;
 
 export const newPost = (createPost) => {
   const post = document.querySelector('#post').value;
   const alcaldias = document.querySelector('#alcaldiasPost').value;
+  document.querySelector('#toPost').style.display = 'block';
+  document.querySelector('#toEdit').style.display = 'none';
   createPost(post, alcaldias);
+  console.log(createPost);
+};
+
+export const btnEditPost = (getPost, postId) => {
+  getPost(postId).then((post) => {
+    const textPost = post.data();
+    console.log(textPost);
+    document.querySelector('#post').value = textPost.post;
+    document.querySelector('#alcaldiasPost').value = textPost.alcaldias;
+    document.querySelector('#toPost').style.display = 'none';
+    document.querySelector('#toEdit').style.display = 'block';
+  });
+};
+
+export const updatePostDb = (editPost, postId) => {
+  editPost(postId, {
+    post: document.querySelector('#post').value,
+    alcaldias: document.querySelector('#alcaldiasPost').value,
+  }).then(() => {
+    // document.querySelector('#toPost').style.display = 'block';
+    // document.querySelector('#toEdit').style.display = 'none';
+    console.log(postId);
+  });
+  return `
+  document.querySelector('#toPost').style.display = 'block';
+  document.querySelector('#toEdit').style.display = 'none';
+  `;
+  // document.querySelector('#toPost').style.display = 'block';
+  // document.querySelector('#toEdit').style.display = 'none';
 };
