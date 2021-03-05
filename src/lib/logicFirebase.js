@@ -39,10 +39,10 @@ export const funcCreateAccount = (email, password) => {
     });
 };
 
-export const funcLogin = (email, password) => {
+export const funcLogin = (email, password, onNavigate, feed) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
-      console.log(user);
+      feed();
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -51,8 +51,6 @@ export const funcLogin = (email, password) => {
       console.log(errorMessage);
     });
 };
-
-
 // export const signOut = () => {
 //   console.log('hola');
 //   firebase.auth().signOut().then(() => {

@@ -8,6 +8,8 @@ import { newPost, btnEditPost, updatePostDb } from './components/posts.js';
 import { buildPost, removePost } from './components/feed.js';
 
 let rootDiv = null;
+let email = null;
+let password = null;
 
 const createAccountHome = () => {
   const navigate = onNavigate('/createAccount');
@@ -25,9 +27,9 @@ const posts = () => {
 };
 
 const loginHome = () => {
-  const email = document.querySelector('#emailLogin').value;
-  const password = document.querySelector('#passwordLogin').value;
-  funcLogin(email, password);
+  email = document.querySelector('#emailLogin').value;
+  password = document.querySelector('#passwordLogin').value;
+  funcLogin(email, password, onNavigate, feed);
 };
 
 const loginGmail = () => {
@@ -47,8 +49,10 @@ window.addEventListener('DOMContentLoaded', () => {
     switch (target.id) {
       case 'login':
         loginHome();
-        feed();
-        buildPost(onGetPost);
+        if (email === '' || password === '') {
+          document.getElementById('errorMessage').innerHTML = '*Debes llenar todos los campos*';
+          document.getElementById('errorMessage').style.visibility = 'visible';
+        } // buildPost(onGetPost);
         break;
       case 'createAccount':
         createAccountHome();
