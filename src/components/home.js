@@ -5,6 +5,7 @@ export const home = `
     </div>
     <div class="homeForm">
     <h1>INGRESAR</h1>
+    <p id="errorMessage" class="error" data-testid="errorMessage" style="visibility: hidden">ERROR</p>
     <input type="email" id="emailLogin" class="input" placeholder="Email">
     <input type="password" id="passwordLogin" class="input" placeholder="Contraseña">
     <input type="button" id="login" class="orangeButton" value="INICIAR SESIÓN">
