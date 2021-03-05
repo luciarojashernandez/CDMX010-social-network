@@ -17,7 +17,6 @@ export const feed = `
 export const buildPost = async (onGetPost) => {
   const postContainer = document.querySelector('#postContainer');
   await onGetPost((postCollection) => {
-    console.log(postCollection);
     postContainer.innerHTML = '';
     // postCollection.then((doc) => {
     postCollection.forEach((element) => {
@@ -49,4 +48,3 @@ export const removePost = /* async */ (deletePost, postId) => {
     console.log(`post${postId}borrado con exito`);
   });
 };
-

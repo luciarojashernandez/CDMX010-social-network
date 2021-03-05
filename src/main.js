@@ -67,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       case 'goPostScreen':
         posts();
+        //newPost(createPost);
         break;
       case 'toPost':
         newPost(createPost);
