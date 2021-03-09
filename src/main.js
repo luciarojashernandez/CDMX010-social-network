@@ -29,7 +29,10 @@ const posts = () => {
 const loginHome = () => {
   email = document.querySelector('#emailLogin').value;
   password = document.querySelector('#passwordLogin').value;
-  funcLogin(email, password, onNavigate, feed);
+  const error = funcLogin(email, password, feed, buildPost, onGetPost);
+  document.getElementById('errorMessage').innerHTML = error;
+  console.log(error);
+  document.getElementById('errorMessage').style.visibility = 'visible';
 };
 
 const loginGmail = () => {
