@@ -32,11 +32,13 @@ export const createUser = async (name, email, password, alcaldias) => {
   });
 };
 
-export const createPost = async (post, alcaldias) => {
-  await dataBase.collection('postDB').doc().set({
+export const createPost = (post, alcaldias) => {
+  dataBase.collection('postDB').doc().set({
     post,
     alcaldias,
-  });
+  })
+    .then(() => console.log('post creado con éxito'))
+    .catch((error) => console.log(error));
 };
 
 // export const getPost = () => dataBase.collection('postDB').get();

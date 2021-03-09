@@ -15,6 +15,7 @@ export const feed = `
     `;
 
 export const buildPost = async (onGetPost) => {
+  console.log(onGetPost);
   const postContainer = document.querySelector('#postContainer');
   await onGetPost((postCollection) => {
     postContainer.innerHTML = '';

@@ -24,7 +24,6 @@ export const authentication = (provider) => {
 };
 
 export const funcCreateAccount = (email, password) => {
-  console.log("hola");
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((user) => {
       // Signed in
@@ -39,16 +38,19 @@ export const funcCreateAccount = (email, password) => {
     });
 };
 
-export const funcLogin = (email, password, onNavigate, feed) => {
+export const funcLogin = (email, password, feed, buildPost, onGetPost) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((user) => {
       feed();
+      buildPost(onGetPost);
     })
     .catch((error) => {
       const errorCode = error.code;
       console.log(errorCode);
       const errorMessage = error.message;
-      console.log(errorMessage);
+      return errorCode + errorMessage;
+      // document.getElementById('errorMessage').innerHTML = errorMessage;
+      // document.getElementById('errorMessage').style.visibility = 'visible';
     });
 };
 // export const signOut = () => {
