@@ -43,9 +43,12 @@ export const buildPost = async (onGetPost) => {
   });
 };
 
-export const removePost = /* async */ (deletePost, postId) => {
-  // await deletePost(postId);
-  deletePost(postId).then(() => {
-    console.log(`post${postId}borrado con exito`);
-  });
+export const removePost = (deletePost, postId) => {
+  // eslint-disable-next-line no-restricted-globals
+  const option = confirm('¿Estás seguro de querer eliminar el post?');
+  if (option === true) {
+    deletePost(postId).then(() => {
+      console.log(`post${postId}borrado con exito`);
+    });
+  }
 };
