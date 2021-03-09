@@ -5,6 +5,7 @@ export const createAccount = `
   </div> 
   <div class="homeForm">
     <h1>CREA TU CUENTA</h1>
+    <p id="errorMessage2" class="error" data-testid="errorMessage" style="visibility: hidden">ERROR</p>
     <input type="text" id="name" class="input" placeholder="Nombre">
     <input type="email" id="emailCreateAccount" class="input" placeholder="Email">
     <input type="password" id="passwordCreateAccount" class="input" placeholder="Contraseña">
@@ -30,11 +31,17 @@ export const createAccount = `
   </div> 
   </div>
 `;
-export const register = (funcCreateAccount, createUser) => {
+export const register = (funcCreateAccount, createUser, feed, funcErrors) => {
   const name = document.querySelector('#name').value;
   const email = document.querySelector('#emailCreateAccount').value;
   const password = document.querySelector('#passwordCreateAccount').value;
   const alcaldias = document.querySelector('#alcaldias').value;
-  funcCreateAccount(email, password);
+  funcCreateAccount(email, password)
+    .then((user) => {
+      feed();
+    })
+    .catch((error) => {
+      funcErrors(error);
+    });
   createUser(name, email, password, alcaldias);
 };
