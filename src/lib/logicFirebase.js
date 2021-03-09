@@ -23,36 +23,11 @@ export const authentication = (provider) => {
     });
 };
 
-export const funcCreateAccount = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((user) => {
-      // Signed in
-      // ...
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorCode + errorMessage);
-    });
-};
+// eslint-disable-next-line max-len
+export const funcCreateAccount = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password);
+// eslint-disable-next-line max-len
+export const funcLogin = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
 
-export const funcLogin = (email, password, feed, buildPost, onGetPost) => {
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((user) => {
-      feed();
-      buildPost(onGetPost);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      console.log(errorCode);
-      const errorMessage = error.message;
-      return errorCode + errorMessage;
-      // document.getElementById('errorMessage').innerHTML = errorMessage;
-      // document.getElementById('errorMessage').style.visibility = 'visible';
-    });
-};
 // export const signOut = () => {
 //   console.log('hola');
 //   firebase.auth().signOut().then(() => {

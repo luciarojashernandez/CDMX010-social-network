@@ -6,6 +6,7 @@ import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
 import { newPost, btnEditPost, updatePostDb } from './components/posts.js';
 import { buildPost, removePost } from './components/feed.js';
+import { funcErrors } from './lib/errors.js';
 
 let rootDiv = null;
 let email = null;
@@ -19,6 +20,7 @@ const createAccountHome = () => {
 const feed = () => {
   const navigate = onNavigate('/feed');
   rootDiv.innerHTML = navigate;
+  buildPost(onGetPost);
 };
 
 const posts = () => {
@@ -29,10 +31,13 @@ const posts = () => {
 const loginHome = () => {
   email = document.querySelector('#emailLogin').value;
   password = document.querySelector('#passwordLogin').value;
-  const error = funcLogin(email, password, feed, buildPost, onGetPost);
-  document.getElementById('errorMessage').innerHTML = error;
-  console.log(error);
-  document.getElementById('errorMessage').style.visibility = 'visible';
+  funcLogin(email, password)
+    .then((user) => {
+      feed();
+    })
+    .catch((error) => {
+      funcErrors(error);
+    });
 };
 
 const loginGmail = () => {
@@ -52,10 +57,6 @@ window.addEventListener('DOMContentLoaded', () => {
     switch (target.id) {
       case 'login':
         loginHome();
-        if (email === '' || password === '') {
-          document.getElementById('errorMessage').innerHTML = '*Debes llenar todos los campos*';
-          document.getElementById('errorMessage').style.visibility = 'visible';
-        } // buildPost(onGetPost);
         break;
       case 'createAccount':
         createAccountHome();
@@ -69,17 +70,14 @@ window.addEventListener('DOMContentLoaded', () => {
         feed();
         break;
       case 'btnSignin':
-        register(funcCreateAccount, createUser);
-        feed();
+        register(funcCreateAccount, createUser, feed, funcErrors);
         break;
       case 'goPostScreen':
         posts();
-        //newPost(createPost);
         break;
       case 'toPost':
         newPost(createPost);
         feed();
-        buildPost(onGetPost);
         break;
       case 'deleteIcon':
         removePost(deletePost, event.target.dataset.id);
@@ -93,7 +91,6 @@ window.addEventListener('DOMContentLoaded', () => {
       case 'toEdit':
         updatePostDb(editPost, idUpdate);
         feed();
-        buildPost(onGetPost);
         break;
       default:
         break;
