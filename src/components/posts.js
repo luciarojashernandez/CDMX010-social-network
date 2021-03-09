@@ -35,7 +35,12 @@ export const posts = `
 export const newPost = (createPost) => {
   const post = document.querySelector('#post').value;
   const alcaldias = document.querySelector('#alcaldiasPost').value;
-  createPost(post, alcaldias);
+  if (post !== '') {
+    createPost(post, alcaldias);
+  } else {
+    // eslint-disable-next-line no-alert
+    alert('Debes escribir un post antes de publicar');
+  }
 };
 
 export const btnEditPost = (getPost, postId) => {
@@ -51,9 +56,15 @@ export const btnEditPost = (getPost, postId) => {
 export const updatePostDb = (editPost, postId) => {
   document.querySelector('#toPost').style.display = 'block';
   document.querySelector('#toEdit').style.display = 'none';
-  editPost(postId, {
-    post: document.querySelector('#post').value,
-    alcaldias: document.querySelector('#alcaldiasPost').value,
-  }).then(() => {
-  });
+  const postValue = document.querySelector('#post').value;
+  const alcaldiasValue = document.querySelector('#alcaldiasPost').value;
+  if (postValue !== '') {
+    editPost(postId, {
+      post: postValue,
+      alcaldias: alcaldiasValue,
+    }).then(() => {
+    });
+  } else {
+    alert('Tu post está vacío');
+  }
 };
