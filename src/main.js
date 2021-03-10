@@ -2,7 +2,7 @@ import {
   authGoogle, authFacebook, createUser, createPost, deletePost, onGetPost, getPost, editPost,
 } from './lib/firebase.js';
 import { routers, onNavigate } from './routers.js';
-import { funcLogin, funcCreateAccount } from './lib/logicFirebase.js';
+import { funcLogin, funcCreateAccount, signOut } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
 import { newPost, btnEditPost, updatePostDb } from './components/posts.js';
 import { buildPost, removePost } from './components/feed.js';
@@ -11,6 +11,12 @@ import { funcErrors } from './lib/errors.js';
 let rootDiv = null;
 let email = null;
 let password = null;
+
+const home = () => {
+  rootDiv = document.querySelector('#root');
+  // rootDiv.innerHTML = routers[window.location.pathname];
+  rootDiv.innerHTML = routers['/home'];
+};
 
 const createAccountHome = () => {
   const navigate = onNavigate('/createAccount');
@@ -50,8 +56,7 @@ const loginFacebook = () => {
 
 window.addEventListener('DOMContentLoaded', () => {
   let idUpdate = null;
-  rootDiv = document.querySelector('#root');
-  rootDiv.innerHTML = routers[window.location.pathname];
+  home();
   rootDiv.addEventListener('click', (event) => {
     const target = event.target;
     switch (target.id) {
@@ -92,9 +97,9 @@ window.addEventListener('DOMContentLoaded', () => {
         updatePostDb(editPost, idUpdate);
         feed();
         break;
-      // case 'cerrar':
-      //   signOut();
-      //   break;
+      case 'btnSignOut':
+        signOut(home);
+        break;
       default:
         break;
     }

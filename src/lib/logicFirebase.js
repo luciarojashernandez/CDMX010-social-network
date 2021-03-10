@@ -28,11 +28,10 @@ export const funcCreateAccount = (email, password) => firebase.auth().createUser
 // eslint-disable-next-line max-len
 export const funcLogin = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
 
-// export const signOut = () => {
-//   console.log('hola');
-//   firebase.auth().signOut().then(() => {
-//     console.log('salio');
-//   }).catch((error) => {
-//     console.log(error);
-//   });
-// };
+export const signOut = (home) => {
+  firebase.auth().signOut().then(() => {
+    home();
+  }).catch((error) => {
+    console.log(error);
+  });
+};

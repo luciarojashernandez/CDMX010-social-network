@@ -4,7 +4,7 @@ export const posts = `
       <img src="images/logo app2.png" class="logoMenu">
       <section class="iconHeader">
         <input type="image" id="alcaldiasIcon" class="alcaldiasIcon" src="images/alcaldias.png">
-        <input type="image" id="menuIcon" class="menuIcon" src="images/menuIcon.png">
+        <input type="image" id="btnSignOut" class="menuIcon" src="images/signoutIcon.png">
       </section>
   </header>
   <textarea id="post" class="textPost" placeholder="Escribe tu post"></textarea>

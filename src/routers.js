@@ -5,7 +5,7 @@ import { alcaldias } from './components/alcaldias.js';
 import { posts } from './components/posts.js';
 
 export const routers = {
-  '/': home,
+  '/home': home,
   '/createAccount': createAccount,
   '/feed': feed,
   '/alcaldias': alcaldias,
