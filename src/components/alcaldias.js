@@ -10,7 +10,7 @@ export const alcaldias = `
       </ul>
       <span class="btnMenu">
       <input type="image" id="alcaldiasIcon" class="menuIcon" src="images/alcaldias.png">
-      <input type="image" id="menuIcon" class="menuIcon" src="images/menuIcon.png">
+      <input type="image" id="btnSignOut" class="menuIcon" src="images/signoutIcon.png">
       </span>
 </header>
 <h2>¿Donde quieres comer hoy?</h2>
