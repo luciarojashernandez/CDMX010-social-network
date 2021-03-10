@@ -41,7 +41,7 @@ const loginHome = () => {
 };
 
 const loginGmail = () => {
-  authGoogle();
+  authGoogle(feed);
 };
 
 const loginFacebook = () => {
@@ -63,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       case 'gmailIcon':
         loginGmail();
-        feed();
+        // feed();
         break;
       case 'facebookIcon':
         loginFacebook();
@@ -92,6 +92,9 @@ window.addEventListener('DOMContentLoaded', () => {
         updatePostDb(editPost, idUpdate);
         feed();
         break;
+      // case 'cerrar':
+      //   signOut();
+      //   break;
       default:
         break;
     }
