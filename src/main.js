@@ -5,7 +5,7 @@ import { routers, onNavigate } from './routers.js';
 import { funcLogin, funcCreateAccount, signOut } from './lib/logicFirebase.js';
 import { register } from './components/createAccount.js';
 import { newPost, btnEditPost, updatePostDb } from './components/posts.js';
-import { buildPost, removePost } from './components/feed.js';
+import { buildPost, removePost, funcLike } from './components/feed.js';
 import { funcErrors } from './lib/errors.js';
 
 let rootDiv = null;
@@ -40,6 +40,7 @@ const loginHome = () => {
   funcLogin(email, password)
     .then((user) => {
       feed();
+      localStorage.setItem('emailStorage', user.user.email);
     })
     .catch((error) => {
       funcErrors(error);
@@ -48,6 +49,7 @@ const loginHome = () => {
 
 const loginGmail = () => {
   authGoogle(feed);
+  
 };
 
 const loginFacebook = () => {
@@ -99,6 +101,9 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       case 'btnSignOut':
         signOut(home);
+        break;
+      case 'likeIcon':
+        funcLike(getPost, event.target.dataset.id);
         break;
       default:
         break;

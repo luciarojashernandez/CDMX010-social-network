@@ -54,10 +54,11 @@ export const createUser = async (name, email, password, alcaldias) => {
   });
 };
 
-export const createPost = (post, alcaldias) => {
+export const createPost = (alcaldias, post, like) => {
   dataBase.collection('postDB').doc().set({
-    post,
     alcaldias,
+    post,
+    like,
   })
     .then(() => console.log('post creado con éxito'))
     .catch((error) => console.log(error));
