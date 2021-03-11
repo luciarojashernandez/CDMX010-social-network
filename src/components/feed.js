@@ -15,7 +15,6 @@ export const feed = `
     `;
 
 export const buildPost = async (onGetPost) => {
-  console.log(onGetPost);
   const postContainer = document.querySelector('#postContainer');
   await onGetPost((postCollection) => {
     postContainer.innerHTML = '';
@@ -33,7 +32,7 @@ export const buildPost = async (onGetPost) => {
         </ul> -->
         <p>${infoPost.post}</p>
         <p>${infoPost.alcaldias}</p>
-        <input type="image" id="likeIcon" class="likeIcon" src="images/likeIcon.png">
+        <input type="image" id="likeIcon" class="likeIcon" data-id="${infoPost.id}" src="images/likeIcon.png">
         <input type="image" id="editIcon" class="editIcon btnEdit" data-id="${infoPost.id}" src="images/editIcon.png">
         <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
       </div>
@@ -51,4 +50,18 @@ export const removePost = (deletePost, postId) => {
       console.log(`post${postId}borrado con exito`);
     });
   }
+};
+
+export const funcLike = (getPost, postId) => {
+  const emailStorage = localStorage.getItem('emailStorage');
+  let likesArray = null;
+  getPost(postId).then((post) => {
+    const textPost = post.data();
+    // const email = textPost.like.email;
+    likesArray = textPost.like.email.filter((email) => email === emailStorage);
+    console.log(likesArray);
+    if (likesArray === '') {
+      // likesArray.push(emailStorage);
+    }
+  });
 };

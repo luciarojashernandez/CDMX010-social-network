@@ -35,8 +35,9 @@ export const posts = `
 export const newPost = (createPost) => {
   const post = document.querySelector('#post').value;
   const alcaldias = document.querySelector('#alcaldiasPost').value;
+  const like = [''];
   if (post !== '') {
-    createPost(post, alcaldias);
+    createPost(alcaldias, post, like);
   } else {
     // eslint-disable-next-line no-alert
     alert('Debes escribir un post antes de publicar');
