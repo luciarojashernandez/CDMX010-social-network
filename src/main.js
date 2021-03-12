@@ -49,7 +49,6 @@ const loginHome = () => {
 
 const loginGmail = () => {
   authGoogle(feed);
-  
 };
 
 const loginFacebook = () => {

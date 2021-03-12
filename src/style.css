@@ -168,6 +168,11 @@ h2 {
   font-size: 1.7rem;
   color: #645d5d;
 }
+.optionsBtn{
+  display: flex;
+  color: #f96d15;
+}
+
 .likeIcon {
   width: 45px;
   height: 40px;
