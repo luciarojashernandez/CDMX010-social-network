@@ -22,6 +22,7 @@ export const buildPost = async (onGetPost) => {
     postCollection.forEach((element) => {
       const infoPost = element.data();
       infoPost.id = element.id;
+      const numberLike = infoPost.like.length;
       postContainer.innerHTML += `
       <div class="singlePost">
   <!--       <input type="image" id="profilePicture">
@@ -32,6 +33,7 @@ export const buildPost = async (onGetPost) => {
         </ul> -->
         <p>${infoPost.post}</p>
         <p>${infoPost.alcaldias}</p>
+        <h5>${numberLike}</h5>
         <input type="image" id="likeIcon" class="likeIcon" data-id="${infoPost.id}" src="images/likeIcon.png">
         <input type="image" id="editIcon" class="editIcon btnEdit" data-id="${infoPost.id}" src="images/editIcon.png">
         <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
@@ -52,16 +54,37 @@ export const removePost = (deletePost, postId) => {
   }
 };
 
-export const funcLike = (getPost, postId) => {
+export const funcLike = (postId, getPost, editPost) => {
   const emailStorage = localStorage.getItem('emailStorage');
-  let likesArray = null;
   getPost(postId).then((post) => {
-    const textPost = post.data();
-    // const email = textPost.like.email;
-    likesArray = textPost.like.email.filter((email) => email === emailStorage);
-    console.log(likesArray);
-    if (likesArray === '') {
-      // likesArray.push(emailStorage);
+    const emailData = post.data().like;
+    let likeActive = false;
+    if (emailData.length !== 0) {
+      // eslint-disable-next-line no-restricted-syntax
+      emailData.forEach((email) => {
+        if (email === emailStorage) {
+          likeActive = true;
+        }
+      });
+    }
+    if (likeActive === false) {
+      emailData.push(emailStorage);
+      editPost(postId, {
+        like: emailData,
+      }).then(() => {
+      });
+    } else {
+      const emailPosition = emailData.indexOf(emailStorage);
+      emailData.splice(emailPosition, 1);
+      editPost(postId, {
+        like: emailData,
+      }).then(() => {
+      });
     }
   });
 };
+
+/* function removeItemFromArr ( arr, item ) {
+  var i = arr.indexOf( item );
+  arr.splice( i, 1 );
+} */

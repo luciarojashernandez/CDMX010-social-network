@@ -35,7 +35,7 @@ export const posts = `
 export const newPost = (createPost) => {
   const post = document.querySelector('#post').value;
   const alcaldias = document.querySelector('#alcaldiasPost').value;
-  const like = [''];
+  const like = [];
   if (post !== '') {
     createPost(alcaldias, post, like);
   } else {
