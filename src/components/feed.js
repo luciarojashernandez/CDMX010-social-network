@@ -25,18 +25,14 @@ export const buildPost = async (onGetPost) => {
       const numberLike = infoPost.like.length;
       postContainer.innerHTML += `
       <div class="singlePost">
-  <!--       <input type="image" id="profilePicture">
-        <ul class="postData">
-            <li>Nombre:</li>
-            <li>Fecha:</li>
-            <li>Ubicación</li>
-        </ul> -->
         <p>${infoPost.post}</p>
         <p>${infoPost.alcaldias}</p>
+      <div class="optionsBtn"> 
         <h5>${numberLike}</h5>
-        <input type="image" id="likeIcon" class="likeIcon" data-id="${infoPost.id}" src="images/likeIcon.png">
+        <input type="image" id="likeIcon" class="likeIcon ${infoPost.id}" data-id="${infoPost.id}" src="images/likeIcon.png">
         <input type="image" id="editIcon" class="editIcon btnEdit" data-id="${infoPost.id}" src="images/editIcon.png">
         <input type="image" id="deleteIcon" class="deleteIcon btnDelete" data-id="${infoPost.id}" src="images/deleteIcon.png">
+      </div>
       </div>
         `;
     });
@@ -56,6 +52,7 @@ export const removePost = (deletePost, postId) => {
 
 export const funcLike = (postId, getPost, editPost) => {
   const emailStorage = localStorage.getItem('emailStorage');
+  let colorBtn = null;
   getPost(postId).then((post) => {
     const emailData = post.data().like;
     let likeActive = false;
@@ -71,20 +68,20 @@ export const funcLike = (postId, getPost, editPost) => {
       emailData.push(emailStorage);
       editPost(postId, {
         like: emailData,
-      }).then(() => {
-      });
+      })
+        .then(() => {
+          colorBtn = document.querySelector(`.${postId}`);
+          colorBtn.setAttribute('src', 'images/likebrown.png');
+        });
     } else {
       const emailPosition = emailData.indexOf(emailStorage);
       emailData.splice(emailPosition, 1);
       editPost(postId, {
         like: emailData,
       }).then(() => {
+        colorBtn = document.querySelector(`.${postId}`);
+        colorBtn.setAttribute('src', 'images/likeIcon.png');
       });
     }
   });
 };
-
-/* function removeItemFromArr ( arr, item ) {
-  var i = arr.indexOf( item );
-  arr.splice( i, 1 );
-} */
