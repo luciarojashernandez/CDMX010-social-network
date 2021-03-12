@@ -103,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
         signOut(home);
         break;
       case 'likeIcon':
-        funcLike(getPost, event.target.dataset.id);
+        funcLike(event.target.dataset.id, getPost, editPost);
         break;
       default:
         break;
