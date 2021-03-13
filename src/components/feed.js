@@ -21,6 +21,7 @@ export const buildPost = async (onGetPost) => {
     // postCollection.then((doc) => {
     postCollection.forEach((element) => {
       const infoPost = element.data();
+      console.log(infoPost);
       infoPost.id = element.id;
       const numberLike = infoPost.like.length;
       postContainer.innerHTML += `
@@ -52,7 +53,7 @@ export const removePost = (deletePost, postId) => {
 
 export const funcLike = (postId, getPost, editPost) => {
   const emailStorage = localStorage.getItem('emailStorage');
-  let colorBtn = null;
+  // const colorBtn = null;
   getPost(postId).then((post) => {
     const emailData = post.data().like;
     let likeActive = false;
@@ -68,20 +69,22 @@ export const funcLike = (postId, getPost, editPost) => {
       emailData.push(emailStorage);
       editPost(postId, {
         like: emailData,
-      })
-        .then(() => {
-          colorBtn = document.querySelector(`.${postId}`);
-          colorBtn.setAttribute('src', 'images/likebrown.png');
-        });
+      });
+      // .then(() => {
+      //   // colorBtn = document.querySelector(`input[data-id=${postId}]`);
+      //   colorBtn = document.querySelector(`.${postId}`);
+      //   colorBtn.setAttribute('src', 'images/likebrown.png');
+      // });
     } else {
       const emailPosition = emailData.indexOf(emailStorage);
       emailData.splice(emailPosition, 1);
       editPost(postId, {
         like: emailData,
-      }).then(() => {
-        colorBtn = document.querySelector(`.${postId}`);
-        colorBtn.setAttribute('src', 'images/likeIcon.png');
       });
+      // .then(() => {
+      //   colorBtn = document.querySelector(`.${postId}`);
+      //   colorBtn.setAttribute('src', 'images/likeIcon.png');
+      // });
     }
   });
 };
