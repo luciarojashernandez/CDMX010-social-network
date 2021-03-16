@@ -31,11 +31,9 @@ export const createAccount = `
   </div> 
   </div>
 `;
-export const register = (funcCreateAccount, createUser, feed, funcErrors) => {
-  const name = document.querySelector('#name').value;
+export const register = (funcCreateAccount, feed, funcErrors) => {
   const email = document.querySelector('#emailCreateAccount').value;
   const password = document.querySelector('#passwordCreateAccount').value;
-  const alcaldias = document.querySelector('#alcaldias').value;
   funcCreateAccount(email, password)
     .then((user) => {
       feed();
@@ -43,5 +41,4 @@ export const register = (funcCreateAccount, createUser, feed, funcErrors) => {
     .catch((error) => {
       funcErrors(error);
     });
-  createUser(name, email, password, alcaldias);
 };

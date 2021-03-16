@@ -16,12 +16,12 @@ describe('build post', () => {
       },
     ];
     const onGetPost = jest.fn().mockImplementation(() => Promise.resolve(postDB));
-    const firebase = { onGetPost };
-
-    await buildPost(firebase);
+    //const firebase = { onGetPost };
+    // console.log(onGetPost);
+    await buildPost(onGetPost);
     expect(target.innerHTML).toMatchSnapshot();
   });
   // it('debería ser una función', () => {
-  //   expect(typeof myFunction).toBe('function');
+  //   expect(typeof buildPost).toBe('function');
   // });
 });
