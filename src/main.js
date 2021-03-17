@@ -14,7 +14,6 @@ let password = null;
 
 const home = () => {
   rootDiv = document.querySelector('#root');
-  // rootDiv.innerHTML = routers[window.location.pathname];
   rootDiv.innerHTML = routers['/home'];
 };
 
@@ -52,7 +51,7 @@ const loginGmail = () => {
 };
 
 const loginFacebook = () => {
-  authFacebook();
+  authFacebook(feed);
 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -69,11 +68,9 @@ window.addEventListener('DOMContentLoaded', () => {
         break;
       case 'gmailIcon':
         loginGmail();
-        // feed();
         break;
       case 'facebookIcon':
         loginFacebook();
-        feed();
         break;
       case 'btnSignin':
         register(funcCreateAccount, createUser, feed, funcErrors);
@@ -110,6 +107,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-window.onpopstate = () => {
-  rootDiv.innerHTML = routers[window.location.pathname];
-};
+// window.onpopstate = () => {
+//   rootDiv.innerHTML = routers[window.location.pathname];
+// };

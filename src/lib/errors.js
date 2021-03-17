@@ -1,6 +1,5 @@
 export const funcErrors = (error) => {
   const errorCode = error.code;
-  console.log(error);
 
   switch (errorCode) {
     case 'auth/wrong-password':
@@ -24,7 +23,6 @@ export const funcErrors = (error) => {
       document.querySelector('.error').style.visibility = 'visible';
       break;
     default:
-      console.log(errorCode);
       document.querySelector('.error').innerHTML = 'El email es incorrecto';
       document.querySelector('.error').style.visibility = 'visible';
       break;

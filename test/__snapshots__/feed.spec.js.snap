@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`feed test debería renderizar buildPost 1`] = `""`;
+
+exports[`feed test removePost debería eliminar un post 1`] = `""`;
