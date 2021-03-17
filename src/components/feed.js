@@ -18,16 +18,14 @@ export const buildPost = async (onGetPost) => {
   const postContainer = document.querySelector('#postContainer');
   await onGetPost((postCollection) => {
     postContainer.innerHTML = '';
-    // postCollection.then((doc) => {
     postCollection.forEach((element) => {
       const infoPost = element.data();
-      console.log(infoPost);
       infoPost.id = element.id;
       const numberLike = infoPost.like.length;
       postContainer.innerHTML += `
       <div class="singlePost">
-        <p>${infoPost.post}</p>
-        <p>${infoPost.alcaldias}</p>
+      <p id="location">Ubicación: ${infoPost.alcaldias}</p>
+      <p>${infoPost.post}</p>
       <div class="optionsBtn"> 
         <h5>${numberLike}</h5>
         <input type="image" id="likeIcon" class="likeIcon ${infoPost.id}" data-id="${infoPost.id}" src="images/likeIcon.png">
@@ -37,7 +35,6 @@ export const buildPost = async (onGetPost) => {
       </div>
         `;
     });
-    // });
   });
 };
 

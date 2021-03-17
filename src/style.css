@@ -15,7 +15,7 @@ body {
   width: 100vw;
   height: 100vh;
 }
-/*Pantalla de inicio de sesión*/
+/*Login Home*/
 #viewLoginScreen {
   display: flex;
   flex-flow: column;
@@ -101,7 +101,7 @@ h2 {
   padding: 3px;
 
 }
-/*Pantalla de registro*/
+/*Create Account*/
 #createAccountScreen h1 {
   font-size: 30px;
   color: #f96d15;
@@ -168,63 +168,67 @@ h2 {
   font-size: 1.7rem;
   color: #645d5d;
 }
+#location{
+  font-size: 1.3rem;
+}
 .optionsBtn{
   display: flex;
   color: #f96d15;
+  width: auto;
+  height: 45px;
+  justify-content: flex-end;
 }
-
-.likeIcon {
-  width: 45px;
-  height: 40px;
-  left: 88px;
-  top: 398px;
+h5 {
+  margin-left: 50px;
+  margin-top: 15px;
 }
 .editIcon {
-  width: 42px;
-  height: 38px;
-  left: 168px;
-  top: 401px;
+  margin-left: 20px;
 }
 .deleteIcon {
-  width: 43px;
-  height: 39px;
-  left: 245px;
-  top: 400px;
-}
-/*Post screen*/
-.imageIcon {
-  position: absolute;
-  width: 32px;
-  height: auto;
-  left: 24px;
-  top: 529px;
-}
-.toPost {
-  padding-bottom: inherit;
-  background: #f96d15;
-  border: #f96d15;
-  color: #ffffff;
-  position: absolute;
-  width: 116px;
+  width: auto;
   height: 30px;
-  left: 218px;
-  top: 529px;
-  border-radius: 4px;
-  font-weight: bold;
-  font-size: 14px;
+  margin-top: 6px;
+  margin-left: 20px;
 }
-.textPost {
-  position: absolute;
-  width: 367px;
-  height: 427px;
-  left: -4px;
-  top: 150px;
-  background: #ffffff;
-  font-family: "Ubuntu";
-  padding: 20px;
+/*Post Screen*/
+#containerPost{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 #alcaldiasPost {
   color: #6b6a6a;
   font-family: 'Ubuntu';
   margin-top: 15px;
 }
+.textPost {
+  height: 427px;
+  background: #ffffff;
+  font-family: "Ubuntu";
+  border:none;
+}
+.btnContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.imageIcon {
+  width: 32px;
+  height: auto;
+}
+.toPost {
+  padding-bottom: inherit;
+  background: #f96d15;
+  border: #f96d15;
+  color: #ffffff;
+  width: 116px;
+  height: 30px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+

@@ -35,7 +35,7 @@ export const register = (funcCreateAccount, feed, funcErrors) => {
   const email = document.querySelector('#emailCreateAccount').value;
   const password = document.querySelector('#passwordCreateAccount').value;
   funcCreateAccount(email, password)
-    .then((user) => {
+    .then(() => {
       feed();
     })
     .catch((error) => {
