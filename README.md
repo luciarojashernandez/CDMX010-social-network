@@ -2,7 +2,7 @@
 
 El diseño y desarrollo de la aplicación se realizó con la finalidad de crear una red social que incentivara el comercio de comida en la CDMX. La inspiración surgió a apartir de la pandemia (por covid 19), donde la venta de comida a través de apps incrementó, dejando en desventaja a algunos pequeños establecimieintos que evitan pagar las comisiones de grandes compañias.
 
-En esta primera etapa del desarrollo el usuario puede  crear una cuenta de acceso con su mail y password, también puede loguearse con la misma cuenta que registró, con gmail o facebook. Asimsimo, puede crear, editar y borrar posts, saí como "likearlos".
+En esta primera etapa del desarrollo el usuario puede  crear una cuenta de acceso con su mail y password, también puede loguearse con la misma cuenta que registró, con gmail o facebook. Asimismo, puede crear, editar y borrar posts, así como "likearlos".
 
 ## Índice
 
