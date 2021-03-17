@@ -1,4 +1,8 @@
-# Creando una Red Social
+# Creando una Red Social: My menu (prototipo)
+
+El diseño y desarrollo de la aplicación se realizó con la finalidad de crear una red social que incentivara el comercio de comida en la CDMX. La inspiración surgió a apartir de la pandemia (por covid 19), donde la venta de comida a través de apps incrementó, dejando en desventaja a algunos pequeños establecimieintos que evitan pagar las comisiones de grandes compañias.
+
+En esta primera etapa del desarrollo el usuario puede  crear una cuenta de acceso con su mail y password, también puede loguearse con la misma cuenta que registró, con gmail o facebook. Asimsimo, puede crear, editar y borrar posts, saí como "likearlos".
 
 ## Índice
 
@@ -7,9 +11,7 @@
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+* [6. Entrega](#6-entrega)
 
 ## 1. Preámbulo
 
@@ -26,13 +28,7 @@ más comentado.
 
 ## 2. Resumen del proyecto
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
-[Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
-
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de
+En este proyecto se contruyó una Red Social que le permite al usuario crear una cuenta de
 acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 
 ## 3. Objetivos de aprendizaje
@@ -107,54 +103,37 @@ en la que podamos **leer y escribir datos.**
 
 ## 4. Consideraciones generales
 
-* Este proyecto se debe trabajar en equipos de tres.
+* El proyecto se trabajó en equipo de 3 .
 
-* La lógica del proyecto debe estar implementada completamente en JavaScript
+* La lógica del proyecto está implementada completamente en JavaScript
   (ES6+), HTML y CSS :smiley:. Para este proyecto **no está permitido** utilizar
   _frameworks_ o librerías de CSS y JS.
 
-* La división y organización del trabajo debe permitir, sin excepciones, que
-  **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
-  en **cada historia**. _No se dividan el trabajo como en una fábrica._
-  - ¿Hasta acá has avanzado en tus proyectos con cierta fluidez y sin mayores
-    problemas? Sé generosa con tus compañeras, permíteles aprender y practicar
-    sin restricciones, aunque tome un poco más de tiempo. Aproveha de
-    _coachearlas_, de hacer _pair programming_, una de las mejores maneras de
-    aprender es explicando verbalmente.
-
-  - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
-    con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
-    para practicar y aprender lo que se te hace más difícil.
-
-* Solamente pueden trabajar en una única historia por vez, no pueden avanzar a
-  la siguiente sin haber completado la anterior. La historia se completa cuando
-  se cumplen **todos** sus Criterios de Aceptación + **toda** su Definición
-  de Terminado.
-
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
+Se comenzó realizando un _fork_ y _clonando_ este repositorio.
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
 ### 5.1 Boilerplate
 
-Este proyecto no incluye un _boilerplate_, así es que tendrás que definir la
-estructura de carpetas y escribir tus propias Pruebas Unitarias (_tests_). Para
-hacerlo, puedes guiarte de los proyectos anteriores.
+Este proyecto no incluía un _boilerplate_, por lo que se definió  la
+estructura de carpetas y de las Pruebas Unitarias (_tests_).
 
 ### 5.2 Definición del producto
 
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Es importante
-que detalles:
-
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
+* ¿Quiénes son los principales usuarios de producto?
+Dueños de establecimientos de comida en la CDMX y consumidores de comida en línea -principalmente-.
+* ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
+La posibilidad de tener una red social que permite unificar la interacción entre consumidores y vendedores, así como el beneficio de promocionar los productos a traves de la creación de posts propios o creados por los mismo consumidores.
 
 ### 5.3 Historias de usuario
 
-Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
-Usuario que representen todo lo que necesitan hacer/ver en la Red Social. Cada
-una de tus Historias de Usuario debe tener:
+Las historias de usuario fueron creadas entendiendo las necesidades del target, para esta primera etapa del proyecto se desarrollaron las siguientes:
+**- HU 1: Inicio de sesión con cuenta (email y password), con gmail o facebook.**
+**- HU 1: Regitro de cuenta con email y password.**
+**- HU 3: Escribir una entrada y poder publicarla en el feed.**
+**- HU 4: Editar una publicación propia.**
+**- HU 5:Eliminar una publicación propia.**
+**- HU 6: Poder dar y quitar like (ver el conteo de likes de una publicación).**
 
 * **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
   necesidades del usuario.
@@ -174,10 +153,12 @@ una de tus Historias de Usuario debe tener:
     usuarios como mejoras.
 
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
-
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
+##### Prototipo de baja fidelidad
+![](/SocialNetwork1.jpg)
+##### Prototipo de baja fidelidad (con feedback)
+![](/SocialNetwork2.jpg)
+##### Prototipo de alta fidelidad
+![](/SocialNetwork3.jpg)
 
 ### 5.5 Responsive
 
@@ -242,72 +223,10 @@ tus H.U.:
 * Asegurarte de que la implementación en código siga los lineamientos del
   diseño.
 
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-* Permite crear posts con imágenes.
-* Permite buscar usuarios, agregar y eliminar "amigos".
-* Permite definir la privacidad de los _posts_ (público o solamente para amigos).
-* Permite ver su muro de cualquier usuario "no-amigo" (solamente los
-  posts _públicos_).
-* Permite comentar o responder una publicación.
-* Permite editar perfil.
-
-## 7. Entrega
+## 6. Entrega
 
 El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
 interfaz será desplegada usando GitHub pages u otro servicio de hosting que
 puedas haber encontrado en el camino.
 
 ***
-
-## 8. Pistas, tips y Lecturas complementarias
-
-### Mobile first
-
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve como adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
-
-### Múltiples vistas
-
-En proyectos anteriores nuestras aplicaciones habían estado compuestas de una
-sola _vista_ principal (una sóla _página_). En este proyecto se introduce la
-necesidad de tener que dividir nuestra interfaz en varias _vistas_ o _páginas_
-y ofrecer una manera de navegar entre estas vistas. Este problema se puede
-afrontar de muchas maneras: con archivos HTML independientes (cada uno con su
-URL) y links tradicionales, manteniendo estado en memoria y rederizando
-condicionalmente (sin refrescar la página), [manipulando el historial del
-navegador](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-En este proyecto te invitamos a explorar opciones y decidir una opción
-de implementación.
-
-### Escritura de datos
-
-En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
-habíamos escrito datos (salvar cambios, crear datos, borrar, ...). En este
-proyecto tendrás que crear (salvar) nuevos datos, así como leer, actualizar y
-modificar datos existentes. Estos datos se podrán guardar de forma remota
-usando [Firebase](https://firebase.google.com/).
-
-Otras:
-
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First - ZURB](https://zurb.com/word/mobile-first)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
