@@ -3,19 +3,23 @@ import { buildPost, removePost } from '../src/components/feed.js';
 
 describe('feed test', () => {
   beforeEach(() => {
-    document.body.innerHTML = '<div id="root"></div>';
+    document.body.innerHTML = '<div id="postContainer"></div>';
   });
-  test('debería renderizar buildPost', async () => {
-    const target = document.getElementById('root');
+  // eslint-disable-next-line jest/no-focused-tests
+  test.only('debería renderizar buildPost', async () => {
+    const target = document.getElementById('postContainer');
     const postDB = [
       {
-        alcaldias: 'obregon',
-        id: 'G6cHwWgAOGnfidMokUeJ',
-        like: '["susana23@gmail.com"]',
-        post: 'hola',
+        data: () => ({
+          alcaldias: 'obregon',
+          id: 'G6cHwWgAOGnfidMokUeJ',
+          like: '["susana23@gmail.com"]',
+          post: 'hola',
+        }),
       },
     ];
-    const onGetPost = jest.fn().mockImplementation(() => Promise.resolve(postDB));
+    // eslint-disable-next-line max-len
+    const onGetPost = jest.fn().mockImplementation((callback) => Promise.resolve(postDB).then(callback));
     // const firebase = { onGetPost };
     await buildPost(onGetPost);
     expect(target.innerHTML).toMatchSnapshot();
