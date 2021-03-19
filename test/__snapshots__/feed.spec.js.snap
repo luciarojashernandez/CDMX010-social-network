@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`feed test debería renderizar buildPost 1`] = `""`;
-
-exports[`feed test removePost debería eliminar un post 1`] = `""`;
+exports[`feed test debería renderizar buildPost 1`] = `
+"
+      <div class=\\"singlePost\\">
+      <p id=\\"location\\">Ubicación: obregon</p>
+      <p>hola</p>
+      <div class=\\"optionsBtn\\"> 
+        <h5>22</h5>
+        <input type=\\"image\\" id=\\"likeIcon\\" class=\\"likeIcon undefined\\" data-id=\\"undefined\\" src=\\"images/likeIcon.png\\">
+        <input type=\\"image\\" id=\\"editIcon\\" class=\\"editIcon btnEdit\\" data-id=\\"undefined\\" src=\\"images/editIcon.png\\">
+        <input type=\\"image\\" id=\\"deleteIcon\\" class=\\"deleteIcon btnDelete\\" data-id=\\"undefined\\" src=\\"images/deleteIcon.png\\">
+      </div>
+      </div>
+        "
+`;

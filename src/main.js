@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
         loginFacebook();
         break;
       case 'btnSignin':
-        register(funcCreateAccount, createUser, feed, funcErrors);
+        register(funcCreateAccount, feed, funcErrors);
         break;
       case 'goPostScreen':
         posts();

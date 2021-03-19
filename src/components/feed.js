@@ -19,6 +19,7 @@ export const buildPost = async (onGetPost) => {
   await onGetPost((postCollection) => {
     postContainer.innerHTML = '';
     postCollection.forEach((element) => {
+      console.log('Estamos en el callback de consol loge');
       const infoPost = element.data();
       infoPost.id = element.id;
       const numberLike = infoPost.like.length;
